@@ -47,9 +47,12 @@ function fader(el, time) {
 
 function ender() {
 	var tl = new TimelineMax();
-	tl.from([".t3", ".logo3"], { duration: .3, opacity: 0 }, "+=.2");
+	tl.add("dumb");
+	tl.from([".logo3"], { duration: .3, opacity: 0 }, "dumb");
+	tl.add((0, _proline.olg)(), "dumb");
+	tl.from([".t3"], { duration: .3, opacity: 0 });
 	tl.from([".footer", ".cta"], { duration: .3, opacity: 0 }, "+=.5");
-	tl.add((0, _proline.olg)());
+
 	return tl;
 }
 
